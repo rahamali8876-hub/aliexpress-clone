@@ -156,8 +156,9 @@ class MigrationAndSuperuser:
         )
 
         print("Checking superuser...")
-        django.setup()
-        from apps.accounts.models import User
+        from django.contrib.auth import get_user_model
+
+        User = get_user_model()
 
         if not User.objects.filter(is_superuser=True).exists():
             User.objects.create_superuser(
@@ -228,17 +229,15 @@ if __name__ == "__main__":
     django.setup()
 
     # apps_path = Path("./apps")
-    # db_file = Path("./database/db.sqlite3")
+    db_file = Path("./database/db.sqlite3")
 
     apps_path = Path("./apps")
     db_folder = Path("./database")
-    db_file = db_folder / "db.sqlite3"
-    fixtures_folder = Path("./fixtures")
 
     # Ensure required folders exist
-    ensure_dir(apps_path)
+    # ensure_dir(apps_path)
     ensure_dir(db_folder)
-    ensure_dir(fixtures_folder)
+    # ensure_dir(fixtures_folder)
 
     while True:
         choice = menu()
