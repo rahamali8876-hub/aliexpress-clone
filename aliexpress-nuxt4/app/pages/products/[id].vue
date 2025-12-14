@@ -12,18 +12,16 @@
 
       <div class="main-info">
         <ProductInfo :product="product" />
-        <ProductActions
-          :product="product"
-          @add-to-cart="addToCart"
-          @wishlist="addToWishlist"
-        />
+
+        <LazyProductsDetailProductActions :selected-variant="selectedVariant" />
+
         <ProductMeta :product="product" />
 
-        <!-- ✅ VariantSelector Component -->
         <LazyProductsDetailVariantSelector
           :product-id="id"
-          @select="handleVariantSelect"
+          @select="v => selectedVariant = v"
         />
+        
       </div>
     </div>
 
@@ -50,16 +48,20 @@ import { getProducts } from "~/services/api/products/product"
 
 // Components
 import ProductInfo from "~/components/products/detail/ProductInfo.vue"
-import ProductActions from "~/components/products/detail/ProductActions.vue"
+// import ProductActions from "~/components/products/detail/ProductActions.vue"
 import ProductMeta from "~/components/products/detail/ProductMeta.vue"
 import ProductTabs from "~/components/products/detail/ProductTabs.vue"
 import ProductSpecs from "~/components/products/detail/ProductSpecs.vue"
 import ProductReviewList from "~/components/products/detail/ProductReviewList.vue"
 import ProductRelated from "~/components/products/detail/ProductRelated.vue"
 // import VariantSelector from "~/components/products/detail/VariantSelector.vue"
+// import { LazyProductsDetailProductActions } from '../../../.nuxt/components';
+
 
 const route = useRoute()
 const id = route.params.id
+
+const selectedVariant = ref(null)
 
 const productStore = useProductStore()
 const product = ref(null)
@@ -111,12 +113,12 @@ function handleVariantSelect(variant) {
 
 
 // Cart & Wishlist
-function addToCart(product) {
-  console.info("[ProductPage] Add to cart:", product)
-}
-function addToWishlist(product) {
-  console.info("[ProductPage] Add to wishlist:", product)
-}
+// function addToCart(product) {
+//   console.info("[ProductPage] Add to cart:", product)
+// }
+// function addToWishlist(product) {
+//   console.info("[ProductPage] Add to wishlist:", product)
+// }
 </script>
 
 <style scoped>
