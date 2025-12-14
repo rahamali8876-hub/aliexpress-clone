@@ -1,169 +1,169 @@
 [
   {
     "model": "home.homepagebanner",
-    "pk": "320cde45-6e93-485e-97b5-e45ced84f404",
+    "pk": "ed161738-3489-48db-96d8-44de3cdfb45c",
     "fields": {
-      "title": "Reduce through remember.",
-      "image": "E:\\aliexpress-clone\\aliexpress-api\\aliexpressapi\\media\\default.jpg",
-      "link_url": "http://ryan.biz/",
-      "alt_text": "Keep task near college agency third.",
+      "title": "Court.",
+      "image": "C:\\Py-Apis\\aliexpress-clone\\aliexpress-api\\aliexpressapi\\media\\default.jpg",
+      "link_url": "https://www.fitzpatrick.com/",
+      "alt_text": "Character car sport half record.",
       "sort_order": 0,
       "is_active": true,
-      "created_at": "2025-12-13T14:14:32.691408+00:00",
-      "updated_at": "2025-12-13T14:14:32.691408+00:00"
+      "created_at": "2025-12-14T06:47:25.562580+00:00",
+      "updated_at": "2025-12-14T06:47:25.562580+00:00"
     }
   },
   {
     "model": "home.homepagebanner",
-    "pk": "151613d6-fa59-497d-8bda-adba704f9473",
+    "pk": "11805a16-4951-41df-bd86-95e8952d09bd",
     "fields": {
-      "title": "Fast note.",
-      "image": "E:\\aliexpress-clone\\aliexpress-api\\aliexpressapi\\media\\default.jpg",
-      "link_url": "https://www.delacruz.info/",
-      "alt_text": "Get represent stop movement nor rule.",
+      "title": "Policy.",
+      "image": "C:\\Py-Apis\\aliexpress-clone\\aliexpress-api\\aliexpressapi\\media\\default.jpg",
+      "link_url": "https://harris.org/",
+      "alt_text": "Race range live.",
       "sort_order": 1,
       "is_active": true,
-      "created_at": "2025-12-13T14:14:32.691408+00:00",
-      "updated_at": "2025-12-13T14:14:32.691408+00:00"
+      "created_at": "2025-12-14T06:47:25.562580+00:00",
+      "updated_at": "2025-12-14T06:47:25.562580+00:00"
     }
   },
   {
     "model": "home.homepagebanner",
-    "pk": "7b400dbb-8d68-4d19-a315-2987dbcd534e",
+    "pk": "ca73951c-37ff-4f0d-8f2b-57bc13db53ee",
     "fields": {
-      "title": "Able set team.",
-      "image": "E:\\aliexpress-clone\\aliexpress-api\\aliexpressapi\\media\\default.jpg",
-      "link_url": "https://johnson-crawford.com/",
-      "alt_text": "Single magazine agree we fast.",
+      "title": "Race international at.",
+      "image": "C:\\Py-Apis\\aliexpress-clone\\aliexpress-api\\aliexpressapi\\media\\default.jpg",
+      "link_url": "https://www.boyle.net/",
+      "alt_text": "Conference painting five relate wish.",
       "sort_order": 2,
       "is_active": true,
-      "created_at": "2025-12-13T14:14:32.691408+00:00",
-      "updated_at": "2025-12-13T14:14:32.691408+00:00"
+      "created_at": "2025-12-14T06:47:25.562580+00:00",
+      "updated_at": "2025-12-14T06:47:25.562580+00:00"
     }
   },
   {
     "model": "home.homepagepromotion",
-    "pk": "695c8a06-bcd8-4012-b385-ffce780e1d2a",
+    "pk": "342656ee-2ef3-41c7-bbad-88519ec95f93",
     "fields": {
-      "title": "Capital kitchen.",
-      "description": "Affect forward size blue eat region many participant.",
-      "image": "E:\\aliexpress-clone\\aliexpress-api\\aliexpressapi\\media\\default.jpg",
-      "link_url": "https://www.bailey-scott.org/",
+      "title": "Stop fact.",
+      "description": "Ground at role bag close for relationship expect book admit.",
+      "image": "C:\\Py-Apis\\aliexpress-clone\\aliexpress-api\\aliexpressapi\\media\\default.jpg",
+      "link_url": "http://www.yu.com/",
       "sort_order": 0,
       "is_active": true,
-      "created_at": "2025-12-13T14:14:32.691408+00:00",
-      "updated_at": "2025-12-13T14:14:32.691408+00:00"
+      "created_at": "2025-12-14T06:47:25.562580+00:00",
+      "updated_at": "2025-12-14T06:47:25.562580+00:00"
     }
   },
   {
     "model": "home.homepagepromotion",
-    "pk": "5d34a45b-36cf-482b-88e1-3e67fb45ef7a",
+    "pk": "a19a1721-e0bf-43fa-8aea-7a5b5c3c785f",
     "fields": {
-      "title": "Budget single southern.",
-      "description": "Event represent spring prove likely theory mean ball president city.",
-      "image": "E:\\aliexpress-clone\\aliexpress-api\\aliexpressapi\\media\\default.jpg",
-      "link_url": "https://www.pearson.com/",
+      "title": "Something strategy radio.",
+      "description": "Address gas read same total ahead human.",
+      "image": "C:\\Py-Apis\\aliexpress-clone\\aliexpress-api\\aliexpressapi\\media\\default.jpg",
+      "link_url": "https://www.fernandez.com/",
       "sort_order": 1,
       "is_active": true,
-      "created_at": "2025-12-13T14:14:32.691408+00:00",
-      "updated_at": "2025-12-13T14:14:32.691408+00:00"
+      "created_at": "2025-12-14T06:47:25.562580+00:00",
+      "updated_at": "2025-12-14T06:47:25.562580+00:00"
     }
   },
   {
     "model": "home.homepagepromotion",
-    "pk": "9373987b-270e-47ae-a163-c5a702ced6a0",
+    "pk": "810af25a-04a5-4a6b-89b2-244817922282",
     "fields": {
-      "title": "Enter data fear.",
-      "description": "Ball carry part sort blood begin hospital week ten fear.",
-      "image": "E:\\aliexpress-clone\\aliexpress-api\\aliexpressapi\\media\\default.jpg",
-      "link_url": "http://www.jennings.com/",
+      "title": "Camera term.",
+      "description": "Discussion focus Republican since reality scene your car young again.",
+      "image": "C:\\Py-Apis\\aliexpress-clone\\aliexpress-api\\aliexpressapi\\media\\default.jpg",
+      "link_url": "https://hawkins.com/",
       "sort_order": 2,
       "is_active": true,
-      "created_at": "2025-12-13T14:14:32.691408+00:00",
-      "updated_at": "2025-12-13T14:14:32.691408+00:00"
+      "created_at": "2025-12-14T06:47:25.562580+00:00",
+      "updated_at": "2025-12-14T06:47:25.562580+00:00"
     }
   },
   {
     "model": "home.homepagecategory",
-    "pk": "a7829006-be3f-4dab-85e9-f6151ce20e63",
+    "pk": "de950340-b75e-4b39-9cd0-1d9a53d89478",
     "fields": {
-      "category_id": "0d84b535-6595-439b-8248-eb401da2258f",
+      "category_id": "004f5b29-3b8a-4d0c-a402-a4859695b58a",
       "sort_order": 0
     }
   },
   {
     "model": "home.homepagecategory",
-    "pk": "e84ca5fd-9108-44f3-91b1-b3ca72c117be",
+    "pk": "056cf403-2a07-4f49-b909-487651c5672d",
     "fields": {
-      "category_id": "1311c1a1-dede-4637-80b2-81f2f0fd6608",
+      "category_id": "07bd838c-c3af-4c47-b46a-efecf91d6c08",
       "sort_order": 1
     }
   },
   {
     "model": "home.homepagecategory",
-    "pk": "e7a2a268-5afb-4698-b476-17802df5c3e0",
+    "pk": "b53976be-1ab2-4627-9b0e-4540abd8036d",
     "fields": {
-      "category_id": "1343b076-788b-4d59-83d2-0c0dae0af423",
+      "category_id": "07c7d2f5-229b-447f-9602-3abf65a881d9",
       "sort_order": 2
     }
   },
   {
     "model": "home.homepagecategory",
-    "pk": "a818ed76-6175-4b21-a7ac-12c433f06eeb",
+    "pk": "410d2a26-87a8-46e9-ae99-d03a69101e07",
     "fields": {
-      "category_id": "136edbd9-8e9c-4801-bb7d-cdfc671c60ea",
+      "category_id": "0f0a5889-b68f-4a48-887c-153b7616e717",
       "sort_order": 3
     }
   },
   {
     "model": "home.homepagecategory",
-    "pk": "5ab7f1d8-4f2b-4d84-8947-e43c2fb5767b",
+    "pk": "a69cb526-6b13-4de8-b5c5-6e73bfd07020",
     "fields": {
-      "category_id": "15343123-9c58-45df-be91-cb78f58fb412",
+      "category_id": "21f12196-c1ed-46e2-947e-2e93cb6715af",
       "sort_order": 4
     }
   },
   {
     "model": "home.homepageproduct",
-    "pk": "f4955fb5-9351-46e7-81e5-399aeaeb9edc",
+    "pk": "f4c273e2-fe29-4adb-a942-d7a879608fe4",
     "fields": {
-      "product_id": "09faaf73-49b0-4140-826b-7a7168bbe1c7",
+      "product_id": "0390dffe-dd8e-4b11-98d9-2560e96c23ef",
       "featured_rank": 1,
       "sort_order": 0
     }
   },
   {
     "model": "home.homepageproduct",
-    "pk": "da06ee46-f897-4b81-8e5d-06d9de84c9f3",
+    "pk": "e0718f17-eaef-4c14-9b37-586ac220c40e",
     "fields": {
-      "product_id": "11905c6c-c075-41a9-8573-90c5bc44b2de",
+      "product_id": "0a72d82b-1fa6-4fee-8718-451028e0ffd7",
       "featured_rank": 2,
       "sort_order": 1
     }
   },
   {
     "model": "home.homepageproduct",
-    "pk": "93c0119e-8abf-4d55-aa33-49a11ae3af2b",
+    "pk": "de36d3a6-631f-4626-af57-a9f41633d508",
     "fields": {
-      "product_id": "15967efb-e663-42b0-8479-bdb0bcbef680",
+      "product_id": "0bc17ce8-e2cc-4014-bf85-339de75d3b9b",
       "featured_rank": 3,
       "sort_order": 2
     }
   },
   {
     "model": "home.homepageproduct",
-    "pk": "ccb262c4-d69a-44bf-97c6-7622658e5298",
+    "pk": "e0154908-294b-40c6-9d99-543d0f73db8e",
     "fields": {
-      "product_id": "1c5f55b2-a98d-40ea-832c-6649072f7e37",
+      "product_id": "0c4c5e06-324e-4cd7-8779-e13707afc8fe",
       "featured_rank": 4,
       "sort_order": 3
     }
   },
   {
     "model": "home.homepageproduct",
-    "pk": "4ebbc67e-a9d6-458f-b0c9-9498ab15e308",
+    "pk": "27ded053-0b92-4a2a-8eb7-bf6bdbaea6bc",
     "fields": {
-      "product_id": "22f69c31-55c1-457b-a333-6a55f090a120",
+      "product_id": "0e61ce0b-19de-44b4-a27b-a456ee7dc7ec",
       "featured_rank": 5,
       "sort_order": 4
     }
