@@ -2,18 +2,14 @@
 
 import { defineStore } from "pinia"
 import { getHomepageData } from "~/services/api/home/homepage.service"
-import type {
-    HomepageSection,
-    Banner,
-    Category,
-    Product,
-    Promotion
-} from "~/types/homepage"
+import type { HomepageSection } from "~/types/homepage"
 
 export const useHomepageStore = defineStore("homepage", () => {
     const sections = ref<HomepageSection[]>([])
     const loading = ref(false)
-    const error = ref<Error | null>(null)
+
+    // ✅ POJO ONLY
+    const error = ref<{ message: string } | null>(null)
 
     async function fetchHomepage() {
         loading.value = true
@@ -21,12 +17,14 @@ export const useHomepageStore = defineStore("homepage", () => {
 
         try {
             const res = await getHomepageData()
+            console.log('is data or not STORE ----------->>>>>>>>>>', res);
 
             if (!res.success) {
                 throw new Error("Failed to load homepage")
             }
 
             const data = res.data
+
 
             sections.value = [
                 { type: "hero", data: data.hero ?? null },
@@ -37,20 +35,17 @@ export const useHomepageStore = defineStore("homepage", () => {
                 { type: "testimonials", data: data.testimonials ?? [] }
             ]
         } catch (e: any) {
-            error.value = e
+            // ✅ SERIALIZABLE ERROR
+            error.value = {
+                message: e?.message || "Unknown error"
+            }
         } finally {
             loading.value = false
         }
     }
 
-    /* =====================
-       SECTION SELECTORS
-    ===================== */
-
-    const getSection = <T>(type: HomepageSection["type"]) =>
-        computed(() =>
-            sections.value.find(s => s.type === type)?.data as T | null
-        )
+    const getSection = (type: HomepageSection["type"]) =>
+        computed(() => sections.value.find(s => s.type === type)?.data ?? null)
 
     return {
         sections,

@@ -37,7 +37,8 @@ urlpatterns = [
     path("api/v1/", include("apps.products.urls")),
     path("api/v1/", include("apps.search.urls")),
     path("api/v1/", include("apps.carts.urls")),
-    path("api/v1/", include("apps.orders.urls")),
+    path("api/v1/", include("apps.order.urls")),
+    path("api/v1/", include("apps.checkout.urls")),
     # YOUR PATTERNS
     # drf Spectacular
     path("api/schema/", SpectacularAPIView.as_view(), name="schema"),

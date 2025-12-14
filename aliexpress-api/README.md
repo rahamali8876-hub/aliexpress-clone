@@ -10,6 +10,9 @@ uv add django
 uv venv
 uv pip install -r pyproject.toml
 ```
+### Create Apps into Apps Dir
+uv run ./manage.py startapp checkout apps/checkout/
+
 
 ## 🛠 Database Migrations & Superuser
 

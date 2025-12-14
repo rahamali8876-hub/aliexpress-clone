@@ -1,0 +1,16 @@
+One-line summary (important)
+
+CMS-driven mandatory/optional sections = backend defines what is required; 
+    frontend renders dynamically and fails only when required content is missing.
+
+
+
+If you want next, I can show:
+
+full Django CMS schema
+
+DRF serializer
+
+Nuxt store + dynamic renderer
+
+feature flags + A/B testing

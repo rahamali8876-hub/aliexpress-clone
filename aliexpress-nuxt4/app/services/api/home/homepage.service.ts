@@ -9,9 +9,13 @@ export async function getHomepageData() {
 
     try {
         const res = await $api.get(BASE)
+        console.log('is data or not SERVICE ----------->>>>>>>>>>', res);
+        console.log('data ', res.data);
+        console.log('data banner ', res.data.banners[0].title);
+        console.log('data.data', res.data.data);
         return {
             success: true,
-            data: res.data.data
+            data: res.data
         }
     } catch (error: any) {
         return {

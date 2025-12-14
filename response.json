@@ -1,0 +1,187 @@
+{
+  "success": true,
+  "code": 200,
+  "message": "Homepage aggregated content",
+  "request": {
+    "id": "43cdec61-342e-42bc-83ed-433f0ad6850d",
+    "timestamp": "2025-12-13T09:49:55.901757Z",
+    "latency_ms": 0.14,
+    "region": "Nepal-01",
+    "cache": "MISS"
+  },
+  "meta": {},
+  "errors": null,
+  "data": {
+    "banners": [
+      {
+        "id": "e6f1012a-027f-4db1-9bf6-9f10776e7682",
+        "title": "Public indeed small.",
+        "image": "http://localhost:8000/media/E%3A/aliexpress-clone/aliexpress-api/aliexpressapi/media/default.jpg",
+        "alt_text": "Early official blood when.",
+        "sort_order": 0,
+        "is_active": true
+      },
+      {
+        "id": "90f61cdf-7354-4d4d-bce0-277b758f3382",
+        "title": "Study suggest decade.",
+        "image": "http://localhost:8000/media/E%3A/aliexpress-clone/aliexpress-api/aliexpressapi/media/default.jpg",
+        "alt_text": "Social street deal center.",
+        "sort_order": 1,
+        "is_active": true
+      },
+      {
+        "id": "9281b7df-c706-4831-a89d-c4b0d6987336",
+        "title": "Product pay.",
+        "image": "http://localhost:8000/media/E%3A/aliexpress-clone/aliexpress-api/aliexpressapi/media/default.jpg",
+        "alt_text": "Buy pass with four take.",
+        "sort_order": 2,
+        "is_active": true
+      }
+    ],
+    "categories": [
+      {
+        "id": "3c04fdbb-fe9d-4d08-a41f-b4e6440dcfbf",
+        "name": "Democrat",
+        "slug": "cause-kind-economic",
+        "description": "Perhaps music kind deep style sell week."
+      },
+      {
+        "id": "654c4027-c5a6-4503-867b-6b1ac068cbff",
+        "name": "after",
+        "slug": "wide-figure-about",
+        "description": "Cultural either story moment describe."
+      },
+      {
+        "id": "898856de-f91b-4439-8e78-4bdf61186580",
+        "name": "attack",
+        "slug": "daughter-red-senior",
+        "description": "Concern beat leave choose head popular thank."
+      },
+      {
+        "id": "b9a8a56a-008e-4d75-8c9a-8a530ae027fd",
+        "name": "author",
+        "slug": "despite-represent",
+        "description": "Why commercial step detail."
+      },
+      {
+        "id": "5889f9b5-83c1-413b-84fb-ee5146c9b970",
+        "name": "bag",
+        "slug": "long-despite-create",
+        "description": "Drop just real future receive list issue poor."
+      }
+    ],
+    "featured_products": [
+      {
+        "id": "82760e29-0426-4cef-9a58-a53ef7fbebee",
+        "title": "Movement individual wind.",
+        "slug": "us-which-raise",
+        "price": "152.56",
+        "discount_price": null,
+        "description": "Table new discover anyone by bed.\nStep provide human side camera model policy.",
+        "image": "http://localhost:8000/media/E%3A/aliexpress-clone/aliexpress-api/aliexpressapi/media/default.jpg",
+        "stock": 403,
+        "is_active": true,
+        "created_at": "2025-12-13T09:47:34.758992Z",
+        "updated_at": "2025-12-13T09:47:34.758992Z"
+      },
+      {
+        "id": "d46c2833-7ca6-457f-af65-0de64093eb45",
+        "title": "Price not.",
+        "slug": "answer-society",
+        "price": "458.72",
+        "discount_price": null,
+        "description": "Everybody model show raise player each. Reflect lay claim poor. Charge fish hair popular. Sound speak foreign care father.",
+        "image": "http://localhost:8000/media/E%3A/aliexpress-clone/aliexpress-api/aliexpressapi/media/default.jpg",
+        "stock": 111,
+        "is_active": true,
+        "created_at": "2025-12-13T09:47:34.758992Z",
+        "updated_at": "2025-12-13T09:47:34.758992Z"
+      },
+      {
+        "id": "660dd3d6-aa37-4805-96ec-569f772dd496",
+        "title": "Order.",
+        "slug": "all-pay-both-end",
+        "price": "413.93",
+        "discount_price": null,
+        "description": "Training perhaps party beyond space down. Line only include indicate agency that try.\nNear president short low. Gun believe explain watch allow environmental. Boy almost lose nor company good.",
+        "image": "http://localhost:8000/media/E%3A/aliexpress-clone/aliexpress-api/aliexpressapi/media/default.jpg",
+        "stock": 135,
+        "is_active": true,
+        "created_at": "2025-12-13T09:47:34.758992Z",
+        "updated_at": "2025-12-13T09:47:34.758992Z"
+      },
+      {
+        "id": "8c3c2c2b-8074-462d-bb85-87dedae01c01",
+        "title": "Above any.",
+        "slug": "south-agent-unit",
+        "price": "24.03",
+        "discount_price": null,
+        "description": "Contain some church new product. Different member plan her seek bar.\nSound place table issue.\nStill TV eye. Fact care production.\nYou key fly young wide cell factor deep.",
+        "image": "http://localhost:8000/media/E%3A/aliexpress-clone/aliexpress-api/aliexpressapi/media/default.jpg",
+        "stock": 240,
+        "is_active": true,
+        "created_at": "2025-12-13T09:47:34.758992Z",
+        "updated_at": "2025-12-13T09:47:34.758992Z"
+      },
+      {
+        "id": "c0668804-94d7-4a1f-aaf3-5e33e45edda5",
+        "title": "Gun hair you they.",
+        "slug": "drug-new-federal",
+        "price": "286.01",
+        "discount_price": null,
+        "description": "Bit little center policy court alone white. Long rest early effect century fall treatment line. Action people big could effort clearly table.",
+        "image": "http://localhost:8000/media/E%3A/aliexpress-clone/aliexpress-api/aliexpressapi/media/default.jpg",
+        "stock": 491,
+        "is_active": true,
+        "created_at": "2025-12-13T09:47:34.758992Z",
+        "updated_at": "2025-12-13T09:47:34.758992Z"
+      },
+      {
+        "id": "1b52349b-9c1c-4c19-b356-ad9416023b6b",
+        "title": "Couple suggest air.",
+        "slug": "which-hospital",
+        "price": "437.74",
+        "discount_price": null,
+        "description": "Performance relate car world computer listen now. Price test deal law letter.",
+        "image": "http://localhost:8000/media/E%3A/aliexpress-clone/aliexpress-api/aliexpressapi/media/default.jpg",
+        "stock": 437,
+        "is_active": true,
+        "created_at": "2025-12-13T09:47:34.758992Z",
+        "updated_at": "2025-12-13T09:47:34.758992Z"
+      },
+      {
+        "id": "256c5097-a714-4bc5-9961-c40cb54582f7",
+        "title": "Shake benefit information.",
+        "slug": "recent",
+        "price": "156.99",
+        "discount_price": null,
+        "description": "Protect step discover thought us.\nLast present model hard your. Art care relate step peace. Main pull process necessary.",
+        "image": "http://localhost:8000/media/E%3A/aliexpress-clone/aliexpress-api/aliexpressapi/media/default.jpg",
+        "stock": 16,
+        "is_active": true,
+        "created_at": "2025-12-13T09:47:34.758992Z",
+        "updated_at": "2025-12-13T09:47:34.758992Z"
+      }
+    ],
+    "promotions": [
+      {
+        "id": "2a65cdef-7320-4ac7-9b29-a1db9d4c0be4",
+        "title": "Democratic cup history.",
+        "image": "http://localhost:8000/media/E%3A/aliexpress-clone/aliexpress-api/aliexpressapi/media/default.jpg",
+        "sort_order": 0
+      },
+      {
+        "id": "fd7fb6e8-8694-4878-b746-86fc82d27caf",
+        "title": "Hope she customer.",
+        "image": "http://localhost:8000/media/E%3A/aliexpress-clone/aliexpress-api/aliexpressapi/media/default.jpg",
+        "sort_order": 1
+      },
+      {
+        "id": "1e9e5a8c-297e-4e47-a7ee-b5c7a23c7f79",
+        "title": "Read hear open.",
+        "image": "http://localhost:8000/media/E%3A/aliexpress-clone/aliexpress-api/aliexpressapi/media/default.jpg",
+        "sort_order": 2
+      }
+    ]
+  }
+}

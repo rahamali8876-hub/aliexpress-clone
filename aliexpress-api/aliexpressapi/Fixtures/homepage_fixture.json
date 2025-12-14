@@ -1,169 +1,169 @@
 [
   {
     "model": "home.homepagebanner",
-    "pk": "e6f1012a-027f-4db1-9bf6-9f10776e7682",
+    "pk": "320cde45-6e93-485e-97b5-e45ced84f404",
     "fields": {
-      "title": "Public indeed small.",
+      "title": "Reduce through remember.",
       "image": "E:\\aliexpress-clone\\aliexpress-api\\aliexpressapi\\media\\default.jpg",
-      "link_url": "http://www.zimmerman-massey.com/",
-      "alt_text": "Early official blood when.",
+      "link_url": "http://ryan.biz/",
+      "alt_text": "Keep task near college agency third.",
       "sort_order": 0,
       "is_active": true,
-      "created_at": "2025-12-13T09:47:37.810707+00:00",
-      "updated_at": "2025-12-13T09:47:37.810707+00:00"
+      "created_at": "2025-12-13T14:14:32.691408+00:00",
+      "updated_at": "2025-12-13T14:14:32.691408+00:00"
     }
   },
   {
     "model": "home.homepagebanner",
-    "pk": "90f61cdf-7354-4d4d-bce0-277b758f3382",
+    "pk": "151613d6-fa59-497d-8bda-adba704f9473",
     "fields": {
-      "title": "Study suggest decade.",
+      "title": "Fast note.",
       "image": "E:\\aliexpress-clone\\aliexpress-api\\aliexpressapi\\media\\default.jpg",
-      "link_url": "https://turner-sandoval.info/",
-      "alt_text": "Social street deal center.",
+      "link_url": "https://www.delacruz.info/",
+      "alt_text": "Get represent stop movement nor rule.",
       "sort_order": 1,
       "is_active": true,
-      "created_at": "2025-12-13T09:47:37.810707+00:00",
-      "updated_at": "2025-12-13T09:47:37.810707+00:00"
+      "created_at": "2025-12-13T14:14:32.691408+00:00",
+      "updated_at": "2025-12-13T14:14:32.691408+00:00"
     }
   },
   {
     "model": "home.homepagebanner",
-    "pk": "9281b7df-c706-4831-a89d-c4b0d6987336",
+    "pk": "7b400dbb-8d68-4d19-a315-2987dbcd534e",
     "fields": {
-      "title": "Product pay.",
+      "title": "Able set team.",
       "image": "E:\\aliexpress-clone\\aliexpress-api\\aliexpressapi\\media\\default.jpg",
-      "link_url": "https://ray.com/",
-      "alt_text": "Buy pass with four take.",
+      "link_url": "https://johnson-crawford.com/",
+      "alt_text": "Single magazine agree we fast.",
       "sort_order": 2,
       "is_active": true,
-      "created_at": "2025-12-13T09:47:37.810707+00:00",
-      "updated_at": "2025-12-13T09:47:37.810707+00:00"
+      "created_at": "2025-12-13T14:14:32.691408+00:00",
+      "updated_at": "2025-12-13T14:14:32.691408+00:00"
     }
   },
   {
     "model": "home.homepagepromotion",
-    "pk": "2a65cdef-7320-4ac7-9b29-a1db9d4c0be4",
+    "pk": "695c8a06-bcd8-4012-b385-ffce780e1d2a",
     "fields": {
-      "title": "Democratic cup history.",
-      "description": "Offer total line investment sign fear rather foot none center scene.",
+      "title": "Capital kitchen.",
+      "description": "Affect forward size blue eat region many participant.",
       "image": "E:\\aliexpress-clone\\aliexpress-api\\aliexpressapi\\media\\default.jpg",
-      "link_url": "https://henry.org/",
+      "link_url": "https://www.bailey-scott.org/",
       "sort_order": 0,
       "is_active": true,
-      "created_at": "2025-12-13T09:47:37.810707+00:00",
-      "updated_at": "2025-12-13T09:47:37.810707+00:00"
+      "created_at": "2025-12-13T14:14:32.691408+00:00",
+      "updated_at": "2025-12-13T14:14:32.691408+00:00"
     }
   },
   {
     "model": "home.homepagepromotion",
-    "pk": "fd7fb6e8-8694-4878-b746-86fc82d27caf",
+    "pk": "5d34a45b-36cf-482b-88e1-3e67fb45ef7a",
     "fields": {
-      "title": "Hope she customer.",
-      "description": "Attention tough family buy pull start suffer between.",
+      "title": "Budget single southern.",
+      "description": "Event represent spring prove likely theory mean ball president city.",
       "image": "E:\\aliexpress-clone\\aliexpress-api\\aliexpressapi\\media\\default.jpg",
-      "link_url": "http://www.bernard.com/",
+      "link_url": "https://www.pearson.com/",
       "sort_order": 1,
       "is_active": true,
-      "created_at": "2025-12-13T09:47:37.810707+00:00",
-      "updated_at": "2025-12-13T09:47:37.810707+00:00"
+      "created_at": "2025-12-13T14:14:32.691408+00:00",
+      "updated_at": "2025-12-13T14:14:32.691408+00:00"
     }
   },
   {
     "model": "home.homepagepromotion",
-    "pk": "1e9e5a8c-297e-4e47-a7ee-b5c7a23c7f79",
+    "pk": "9373987b-270e-47ae-a163-c5a702ced6a0",
     "fields": {
-      "title": "Read hear open.",
-      "description": "Possible level detail home dream approach ok.",
+      "title": "Enter data fear.",
+      "description": "Ball carry part sort blood begin hospital week ten fear.",
       "image": "E:\\aliexpress-clone\\aliexpress-api\\aliexpressapi\\media\\default.jpg",
-      "link_url": "https://www.smith.org/",
+      "link_url": "http://www.jennings.com/",
       "sort_order": 2,
       "is_active": true,
-      "created_at": "2025-12-13T09:47:37.810707+00:00",
-      "updated_at": "2025-12-13T09:47:37.810707+00:00"
+      "created_at": "2025-12-13T14:14:32.691408+00:00",
+      "updated_at": "2025-12-13T14:14:32.691408+00:00"
     }
   },
   {
     "model": "home.homepagecategory",
-    "pk": "6321d93b-e4cd-4846-abc5-b1f23c8bef63",
+    "pk": "a7829006-be3f-4dab-85e9-f6151ce20e63",
     "fields": {
-      "category_id": "052e813f-3be8-4499-b883-7ab816b5acb5",
+      "category_id": "0d84b535-6595-439b-8248-eb401da2258f",
       "sort_order": 0
     }
   },
   {
     "model": "home.homepagecategory",
-    "pk": "91263b9c-51bb-49ac-8dcf-7c66d705873d",
+    "pk": "e84ca5fd-9108-44f3-91b1-b3ca72c117be",
     "fields": {
-      "category_id": "0f4d59ca-22bd-4f44-b4b5-c905de25330f",
+      "category_id": "1311c1a1-dede-4637-80b2-81f2f0fd6608",
       "sort_order": 1
     }
   },
   {
     "model": "home.homepagecategory",
-    "pk": "1dff25af-5238-434c-8745-f65a6f0cb8e9",
+    "pk": "e7a2a268-5afb-4698-b476-17802df5c3e0",
     "fields": {
-      "category_id": "11596d8e-e89c-4cec-b330-4af779aa18a7",
+      "category_id": "1343b076-788b-4d59-83d2-0c0dae0af423",
       "sort_order": 2
     }
   },
   {
     "model": "home.homepagecategory",
-    "pk": "db1865b0-3e3b-418e-9889-b536b2d4d382",
+    "pk": "a818ed76-6175-4b21-a7ac-12c433f06eeb",
     "fields": {
-      "category_id": "11eddfdb-14f6-4ed3-a949-5ff63f6110f6",
+      "category_id": "136edbd9-8e9c-4801-bb7d-cdfc671c60ea",
       "sort_order": 3
     }
   },
   {
     "model": "home.homepagecategory",
-    "pk": "bfc160f8-39e9-449c-9120-6badaadd9e24",
+    "pk": "5ab7f1d8-4f2b-4d84-8947-e43c2fb5767b",
     "fields": {
-      "category_id": "1598833b-7a3d-4f5d-9d7c-19a9ddbe9c19",
+      "category_id": "15343123-9c58-45df-be91-cb78f58fb412",
       "sort_order": 4
     }
   },
   {
     "model": "home.homepageproduct",
-    "pk": "91c020d1-415a-4dfe-b14e-98d1d8a76a9f",
+    "pk": "f4955fb5-9351-46e7-81e5-399aeaeb9edc",
     "fields": {
-      "product_id": "05ac5f97-dde1-49f6-99a5-1f2f5a11130a",
+      "product_id": "09faaf73-49b0-4140-826b-7a7168bbe1c7",
       "featured_rank": 1,
       "sort_order": 0
     }
   },
   {
     "model": "home.homepageproduct",
-    "pk": "a0674f47-5de7-42bc-8f25-576193dece5f",
+    "pk": "da06ee46-f897-4b81-8e5d-06d9de84c9f3",
     "fields": {
-      "product_id": "0dc7eb29-0b6d-46ac-937f-aac4aa19eab6",
+      "product_id": "11905c6c-c075-41a9-8573-90c5bc44b2de",
       "featured_rank": 2,
       "sort_order": 1
     }
   },
   {
     "model": "home.homepageproduct",
-    "pk": "c509e9c3-3131-4e41-8cf4-0ed905c8bab1",
+    "pk": "93c0119e-8abf-4d55-aa33-49a11ae3af2b",
     "fields": {
-      "product_id": "10d5e6aa-5f45-4923-a9c7-542f36f8fd0f",
+      "product_id": "15967efb-e663-42b0-8479-bdb0bcbef680",
       "featured_rank": 3,
       "sort_order": 2
     }
   },
   {
     "model": "home.homepageproduct",
-    "pk": "e92da0e5-7b7a-4e2d-9699-8b534cd6d056",
+    "pk": "ccb262c4-d69a-44bf-97c6-7622658e5298",
     "fields": {
-      "product_id": "149e54be-a0b9-4b11-acba-465262a9142d",
+      "product_id": "1c5f55b2-a98d-40ea-832c-6649072f7e37",
       "featured_rank": 4,
       "sort_order": 3
     }
   },
   {
     "model": "home.homepageproduct",
-    "pk": "8107081b-0ab6-4c31-9c36-95d028fe56e6",
+    "pk": "4ebbc67e-a9d6-458f-b0c9-9498ab15e308",
     "fields": {
-      "product_id": "15e777c6-9eee-44c8-9019-4514c6954757",
+      "product_id": "22f69c31-55c1-457b-a333-6a55f090a120",
       "featured_rank": 5,
       "sort_order": 4
     }
