@@ -1,5 +1,10 @@
 # AliExpress Clone / (aliexpress-clone)
 
+### Remove git cache_files
+git rm -r --cached .
+git add .
+
+
 ### Learn how to build this!
 ### Searching STORE with Reuseable Codebase
 <!-- // https://collectionapi.metmuseum.org/public/collection/v1/departments -->
@@ -78,8 +83,6 @@ nuxt3-frontend/
 │       └── category.js
 │
 ├── composables/                     # Smart hooks (Composition API)
-│   ├── core/
-│   │   └── base.js                 # handleError(e), authHeaders(token)
 │   ├── observer/
 │   │   └── useObserverCore.js
 │   ├── pagination/
@@ -118,6 +121,8 @@ nuxt3-frontend/
 │   │   └── fuzzy.js
 │   └── homepage/                    # NEW: Homepage utilities
 │       └── transformHomepageData.js
+│   ├── utils/api/
+│   │       └── base.js                 # handleError(e), authHeaders(token)
 │
 ├── assets/                           # Tailwind & static assets
 │   └── css/
