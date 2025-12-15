@@ -5,11 +5,18 @@ import { useAuthStore } from "~/stores/modules/authStore"
 export default defineNuxtPlugin(() => {
   const config = useRuntimeConfig()
 
+  // const api = axios.create({
+  //   baseURL: config.public.baseApi,
+  //   timeout: 10000,
+  //   headers: { "Content-Type": "application/json" },
+  // })
   const api = axios.create({
     baseURL: config.public.baseApi,
     timeout: 10000,
     headers: { "Content-Type": "application/json" },
+    withCredentials: true, // 🔥 REQUIRED FOR SESSION CART
   })
+
 
   // === Interceptors ===
   let isRefreshing = false

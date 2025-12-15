@@ -58,15 +58,50 @@ class CartItemInline(admin.TabularInline):
         return False
 
 
+# @admin.register(Cart)
+# class CartAdmin(admin.ModelAdmin):
+# list_display = (
+#     "id",
+#     "owner",
+#     "total_items",
+#     "total_price",
+#     "is_active",
+#     "is_locked",
+#     "created_at",
+# )
+
+# def total_items(self, obj):
+#     return obj.items.count()
+
+# def total_price(self, obj):
+#     return obj.total_price
+
+
 @admin.register(Cart)
 class CartAdmin(admin.ModelAdmin):
+    # list_display = (
+    #     "id",
+    #     "owner",
+    #     "is_active",
+    #     "is_locked",
+    #     "created_at",
+    # )
+
     list_display = (
         "id",
         "owner",
+        "total_items",
+        "total_price",
         "is_active",
         "is_locked",
         "created_at",
     )
+
+    def total_items(self, obj):
+        return obj.items.count()
+
+    def total_price(self, obj):
+        return obj.total_price
 
     list_filter = (
         "is_active",
@@ -98,3 +133,7 @@ class CartAdmin(admin.ModelAdmin):
 
     def has_delete_permission(self, request, obj=None):
         return False
+
+
+def is_locked(self, obj):
+    return "🔒" if obj.is_locked else "🔓"
