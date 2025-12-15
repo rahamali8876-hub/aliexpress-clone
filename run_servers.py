@@ -112,7 +112,7 @@ except ImportError:
 # Globals
 # -------------------------
 ROOT = Path(__file__).resolve().parent
-LOGS = ROOT / "logs"
+LOGS = ROOT / "logs_automation"
 LOGS.mkdir(exist_ok=True)
 LOG_FILE = LOGS / "dev.log"
 
