@@ -1,54 +1,3 @@
-<!-- 
-<template>
-  <div class="product-actions">
-    <button
-      class="add-to-cart"
-      :disabled="!selectedVariant || loading"
-      @click="handleAddToCart"
-    >
-      {{ loading ? "Adding..." : "Add to Cart" }}
-    </button>
-  </div>
-</template>
-
-<script setup lang="ts">
-import { useCart } from "~/composables/cart/useCart"
-
-const props = defineProps<{
-  selectedVariant: any | null
-}>()
-
-const { addToCart, loading } = useCart()
-
-async function handleAddToCart() {
-  if (!props.selectedVariant) return
-
-  await addToCart({
-    product_variant_id: props.selectedVariant.id,
-    quantity: 1
-  })
-}
-</script>
-
-<style scoped>
-.product-actions {
-  margin-top: 1rem;
-}
-
-.add-to-cart {
-  background: #dc2626; /* red */
-  color: white;
-  padding: 12px 18px;
-  border-radius: 8px;
-  font-weight: 600;
-  width: 100%;
-}
-
-.add-to-cart:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-</style> -->
 
 
 <template>
@@ -131,3 +80,52 @@ button:disabled {
   cursor: not-allowed;
 }
 </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
