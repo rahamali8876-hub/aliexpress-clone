@@ -26,3 +26,9 @@ const { checkout, loading, initCheckout } = useCheckout()
 
 onMounted(initCheckout)
 </script>
+
+
+
+<CheckoutAddress>
+  <AddressSelector />
+</CheckoutAddress>
