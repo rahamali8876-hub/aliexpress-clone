@@ -7,7 +7,7 @@ import time
 from pathlib import Path
 from threading import Thread
 from django.db import connections
-
+import psycopg2
 from django.conf import settings
 
 
@@ -93,37 +93,55 @@ class Cleaner:
         return self.path.exists()
 
 
-# class DatabaseCleaner(Cleaner):
-#     def __init__(self, path: Path, retries: int = 6, delay: float = 0.6):
-#         super().__init__(path)
-#         self.retries = retries
-#         self.delay = delay
+class DatabaseAutoSwitcher:
+    """
+    Automatically switch to SQLite if PostgreSQL is unavailable.
+    Runs BEFORE django.setup()
+    """
 
-#     def clean(self):
-#         if not self.exists():
-#             print("No DB file found")
-#             return
+    def __init__(self, timeout=2):
+        self.timeout = timeout
 
-#         try:
-#             connections.close_all()
-#         except:
-#             pass
+    def postgres_available(self, db):
+        try:
+            psycopg2.connect(
+                dbname=db["NAME"],
+                user=db["USER"],
+                password=db["PASSWORD"],
+                host=db.get("HOST", "localhost"),
+                port=db.get("PORT", 5432),
+                connect_timeout=self.timeout,
+            ).close()
+            return True
+        except Exception:
+            return False
 
-#         spinner = Spinner(f"Deleting DB: {self.path}")
-#         spinner.start()
+    def switch_if_needed(self):
+        db = settings.DATABASES["default"]
+        engine = db["ENGINE"]
 
-#         for _ in range(self.retries):
-#             try:
-#                 self.path.unlink()
-#                 spinner.stop()
-#                 print("🗑️ Database deleted")
-#                 return
-#             except:
-#                 time.sleep(self.delay)
+        # Only care if PostgreSQL is configured
+        if "postgresql" not in engine:
+            print("ℹ️ PostgreSQL not configured — using existing DB")
+            return
 
-#         spinner.stop()
-#         print("❌ Database could not be deleted. Close apps using DB.")
-#         raise PermissionError("File locked!")
+        print("🔍 Checking PostgreSQL availability...")
+
+        if self.postgres_available(db):
+            print("🐘 PostgreSQL is running")
+            return
+
+        print("⚠️ PostgreSQL NOT running — falling back to SQLite")
+
+        sqlite_path = Path("./database/db.sqlite3")
+        sqlite_path.parent.mkdir(exist_ok=True)
+
+        settings.DATABASES["default"] = {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": str(sqlite_path),
+        }
+
+        print(f"🪶 SQLite activated at {sqlite_path}")
 
 
 class CrossDatabaseCleaner:
@@ -209,38 +227,76 @@ class CrossDatabaseCleaner:
             raise RuntimeError(f"❌ Unsupported DB engine: {engine}")
 
 
+# class PycacheCleaner(Cleaner):
+#     def clean(self):
+#         for p in self.path.rglob("__pycache__"):
+#             if p.is_dir():
+#                 shutil.rmtree(p)
+#                 print("🧹 Removed:", p)
+
+
 class PycacheCleaner(Cleaner):
+    """
+    Removes ALL __pycache__ directories recursively.
+    """
+
     def clean(self):
+        if not self.exists():
+            print("❌ Path does not exist")
+            return
+
+        removed = False
+
         for p in self.path.rglob("__pycache__"):
             if p.is_dir():
                 shutil.rmtree(p)
                 print("🧹 Removed:", p)
+                removed = True
+
+        if not removed:
+            print("✔️ No __pycache__ folders found")
 
 
 class MigrationsCleaner(Cleaner):
+    """
+    Safely removes ONLY Django-generated migration files.
+    Keeps:
+      ✔ migrations/ directory
+      ✔ __init__.py
+    """
+
     def clean(self):
         if not self.exists():
             print("❌ Apps path does not exist")
             return
 
-        removed = False
+        removed_any = False
 
-        for migrations_dir in self.path.rglob("migrations"):
+        for app_dir in self.path.iterdir():
+            migrations_dir = app_dir / "migrations"
+
             if not migrations_dir.is_dir():
                 continue
 
             for file in migrations_dir.iterdir():
-                if (
-                    file.is_file()
-                    and file.name != "__init__.py"
-                    and file.suffix == ".py"
-                ):
-                    file.unlink()
-                    print("🧹 Removed:", file)
-                    removed = True
+                # Keep __init__.py ALWAYS
+                if file.name == "__init__.py":
+                    continue
 
-        if not removed:
-            print("✔️ No migration files to remove")
+                # Remove only .py migration files like 0001_*.py
+                if file.is_file() and file.suffix == ".py" and file.name[0:4].isdigit():
+                    file.unlink()
+                    print("🧹 Removed migration:", file)
+                    removed_any = True
+
+                # Also remove compiled leftovers safely
+                if file.suffix in {".pyc"}:
+                    file.unlink()
+                    print("🧹 Removed cache:", file)
+                    removed_any = True
+
+        if not removed_any:
+            print("✔️ No generated migration files found")
 
 
 # ======================================================
@@ -327,7 +383,14 @@ def menu():
 # MAIN LOOP
 # ======================================================
 if __name__ == "__main__":
+    # os.environ.setdefault("DJANGO_SETTINGS_MODULE", "configs.settings.dev")
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "configs.settings.dev")
+
+    # 🔥 MUST run before django.setup()
+    from django.conf import settings
+
+    DatabaseAutoSwitcher().switch_if_needed()
+
     django.setup()
 
     # apps_path = Path("./apps")
