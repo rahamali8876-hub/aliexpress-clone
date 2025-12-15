@@ -1,6 +1,7 @@
 
 // ~/services/api/products/attribute.js
-import { handleError, normalizeResponse } from "~/composables/core/base"
+// import { handleError, normalizeResponse } from "~/composables/core/base"
+import { handleApiError, normalizeResponse } from "~/utils/api/base"
 
 const BASE = "/products"
 
@@ -25,7 +26,7 @@ export async function getAttributes(productId, variantId, params = {}) {
         return normalizeResponse(res)
     } catch (e) {
         logError("get", url, e)
-        return handleError(e)
+        return handleApiError(e)
     }
 }
 
@@ -40,6 +41,6 @@ export async function getAttributeById(productId, variantId, attributeId) {
         return normalizeResponse(res)
     } catch (e) {
         logError("get", url, e)
-        return handleError(e)
+        return handleApiError(e)
     }
 }

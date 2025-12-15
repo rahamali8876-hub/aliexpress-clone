@@ -9,8 +9,7 @@
 //  * 
 
 
-import { handleError, normalizeResponse } from "~/composables/core/base"
-
+import { handleApiError, normalizeResponse } from "~/utils/api/base"
 const BASE = "/products/"
 
 // 🛠 Debug logger helper
@@ -42,7 +41,7 @@ export async function getProducts(params = {}) {
         return normalizeResponse(res)
     } catch (e) {
         logError("get", url, e)
-        return handleError(e)
+        return handleApiError(e)
     }
 }
 

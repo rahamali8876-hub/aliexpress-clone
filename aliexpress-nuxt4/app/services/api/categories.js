@@ -1,5 +1,6 @@
 import { useApi } from "~/composables/core/base"
-import { normalizeResponse } from "~/services/helpers/response"
+// import { normalizeResponse } from "~/services/helpers/response"
+import { normalizeResponse } from "~/utils/api/base"
 
 /**
  * Category API Service

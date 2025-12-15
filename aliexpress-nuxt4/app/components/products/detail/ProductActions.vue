@@ -1,38 +1,133 @@
+<!-- 
 <template>
   <div class="product-actions">
-    <button @click="$emit('add-to-cart', product)">🛒 Add to Cart</button>
-    <button @click="$emit('wishlist', product)">❤️ Wishlist</button>
-    <button @click="shareProduct">🔗 Share</button>
+    <button
+      class="add-to-cart"
+      :disabled="!selectedVariant || loading"
+      @click="handleAddToCart"
+    >
+      {{ loading ? "Adding..." : "Add to Cart" }}
+    </button>
   </div>
 </template>
 
-<script setup>
-const props = defineProps({
-  product: { type: Object, default: null }
-})
+<script setup lang="ts">
+import { useCart } from "~/composables/cart/useCart"
 
-function shareProduct() {
-  if (navigator.share) {
-    navigator.share({
-      title: props.product?.name,
-      url: window.location.href
-    })
-  } else {
-    alert("Share not supported on this browser")
-  }
+const props = defineProps<{
+  selectedVariant: any | null
+}>()
+
+const { addToCart, loading } = useCart()
+
+async function handleAddToCart() {
+  if (!props.selectedVariant) return
+
+  await addToCart({
+    product_variant_id: props.selectedVariant.id,
+    quantity: 1
+  })
+}
+</script>
+
+<style scoped>
+.product-actions {
+  margin-top: 1rem;
+}
+
+.add-to-cart {
+  background: #dc2626; /* red */
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  width: 100%;
+}
+
+.add-to-cart:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+</style> -->
+
+
+<template>
+  <div class="product-actions">
+    <button
+      class="add-to-cart"
+      :disabled="!selectedVariant || cartLoading"
+      @click="handleAddToCart"
+    >
+      {{ cartLoading ? "Adding..." : "Add to Cart" }}
+    </button>
+
+    <button
+      class="buy-now"
+      :disabled="!selectedVariant || checkoutLoading"
+      @click="handleBuyNow"
+    >
+      Buy Now
+    </button>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { useCart } from "~/composables/cart/useCart"
+import { useCheckout } from "~/composables/checkout/useCheckout"
+
+const props = defineProps<{
+  selectedVariant: any | null
+}>()
+
+const { addToCart, loading: cartLoading } = useCart()
+const { buyNow, loading: checkoutLoading } = useCheckout()
+
+async function handleAddToCart() {
+  if (!props.selectedVariant) return
+
+  await addToCart({
+    product_variant_id: props.selectedVariant.id,
+    quantity: 1
+  })
+}
+
+async function handleBuyNow() {
+  if (!props.selectedVariant) return
+
+  await buyNow({
+    product_variant_id: props.selectedVariant.id,
+    quantity: 1
+  })
 }
 </script>
 
 <style scoped>
 .product-actions {
   display: flex;
-  gap: 1rem;
+  gap: 12px;
   margin-top: 1rem;
 }
-button {
-  padding: 0.6rem 1.2rem;
-  border: 1px solid #ddd;
-  background: #0f0f0f;
-  cursor: pointer;
+
+.add-to-cart {
+  flex: 1;
+  background: #dc2626;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.buy-now {
+  flex: 1;
+  background: #111827;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 </style>

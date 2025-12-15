@@ -1,4 +1,5 @@
-import { handleError, normalizeResponse } from "~/composables/core/base"
+// import { handleError, normalizeResponse } from "~/composables/core/base"
+import { handleApiError, normalizeResponse } from "~/utils/api/base"
 
 const BASE = "/category/"
 
@@ -26,7 +27,7 @@ export async function getCategories(params = {}) {
         return normalizeResponse(res)
     } catch (e) {
         logError("get", url, e)
-        return handleError(e)
+        return handleApiError(e)
     }
 }
 
@@ -43,6 +44,6 @@ export async function getCategoryWithProducts(categoryId, params = {}) {
         return normalizeResponse(res)
     } catch (e) {
         logError("get", url, e)
-        return handleError(e)
+        return handleApiError(e)
     }
 }

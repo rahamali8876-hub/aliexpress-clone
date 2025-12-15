@@ -65,7 +65,8 @@
 
 
 // ~/services/api/auth.js
-import { normalizeResponse, handleError } from "~/composables/core/base"
+// import { normalizeResponse, handleError } from "~/composables/core/base"
+import { normalizeResponse, handleApiError } from "~/utils/api/base"
 
 export const AuthService = {
     async register(payload) {
@@ -74,7 +75,7 @@ export const AuthService = {
             const res = await $api.post("/register/", payload)
             return normalizeResponse(res)
         } catch (err) {
-            return handleError(err)
+            return handleApiError(err)
         }
     },
 
@@ -84,7 +85,7 @@ export const AuthService = {
             const res = await $api.post("/login/", payload)
             return normalizeResponse(res)
         } catch (err) {
-            return handleError(err)
+            return handleApiError(err)
         }
     },
 
@@ -94,7 +95,7 @@ export const AuthService = {
             const res = await $api.get("/profile/")
             return normalizeResponse(res)
         } catch (err) {
-            return handleError(err)
+            return handleApiError(err)
         }
     },
 }

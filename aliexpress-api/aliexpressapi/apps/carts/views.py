@@ -184,7 +184,7 @@ from apps.carts.serializers.cart import CartSerializer
 from components.responses.response_factory import ResponseFactory
 from components.caching.cache_factory import get_cache
 from apps.carts.utils.session import get_or_create_cart_session_id
-
+from rest_framework.decorators import action
 
 class CartViewSet(ViewSet):
     permission_classes = [AllowAny]
@@ -224,6 +224,8 @@ class CartViewSet(ViewSet):
         responses={201: CartSerializer},
         tags=["Cart"],
     )
+    
+    @action(detail=False, methods=["post"])
     def add_item(self, request):
         cart = self.get_cart(request)
         self.service.add_item(

@@ -8,6 +8,8 @@ from pathlib import Path
 from threading import Thread
 from django.db import connections
 
+from django.conf import settings
+
 
 # ======================================================
 # Spinner
@@ -91,37 +93,120 @@ class Cleaner:
         return self.path.exists()
 
 
-class DatabaseCleaner(Cleaner):
-    def __init__(self, path: Path, retries: int = 6, delay: float = 0.6):
-        super().__init__(path)
-        self.retries = retries
-        self.delay = delay
+# class DatabaseCleaner(Cleaner):
+#     def __init__(self, path: Path, retries: int = 6, delay: float = 0.6):
+#         super().__init__(path)
+#         self.retries = retries
+#         self.delay = delay
+
+#     def clean(self):
+#         if not self.exists():
+#             print("No DB file found")
+#             return
+
+#         try:
+#             connections.close_all()
+#         except:
+#             pass
+
+#         spinner = Spinner(f"Deleting DB: {self.path}")
+#         spinner.start()
+
+#         for _ in range(self.retries):
+#             try:
+#                 self.path.unlink()
+#                 spinner.stop()
+#                 print("🗑️ Database deleted")
+#                 return
+#             except:
+#                 time.sleep(self.delay)
+
+#         spinner.stop()
+#         print("❌ Database could not be deleted. Close apps using DB.")
+#         raise PermissionError("File locked!")
+
+
+class CrossDatabaseCleaner:
+    """
+    Cross-database cleaner for Django projects.
+
+    ✔ Supports SQLite & PostgreSQL
+    ✔ Automatically detects active DB engine
+    ✔ Refuses to run outside DEBUG mode (safety)
+
+    ------------------------------------------------
+    🔐 ENV REFERENCE (DO NOT COMMIT REAL SECRETS)
+    ------------------------------------------------
+    DEBUG=True
+    ALLOWED_HOSTS=*
+    SECRET_KEY=django-insecure-56%_hh9#xap(yrbv+_yjn_286)t(@blufv77)a%yof89#awv^6
+
+    DB_NAME=portfolio
+    DB_USER=postgres
+    DB_PASS=admin
+    DB_HOST=localhost
+    DB_PORT=5432
+    ------------------------------------------------
+    """
 
     def clean(self):
-        if not self.exists():
-            print("No DB file found")
-            return
+        # ------------------------------------------------
+        # SAFETY GUARD — NEVER RESET DB IN PROD
+        # ------------------------------------------------
+        if not settings.DEBUG:
+            raise RuntimeError(
+                "❌ Refusing to reset database because DEBUG=False. "
+                "This operation is allowed only in development."
+            )
 
+        db = settings.DATABASES["default"]
+        engine = db["ENGINE"]
+
+        # Close all active Django DB connections
         try:
             connections.close_all()
-        except:
+        except Exception:
             pass
 
-        spinner = Spinner(f"Deleting DB: {self.path}")
-        spinner.start()
+        # ------------------------------------------------
+        # SQLITE CLEANUP
+        # ------------------------------------------------
+        if "sqlite3" in engine:
+            db_path = Path(db["NAME"])
 
-        for _ in range(self.retries):
-            try:
-                self.path.unlink()
-                spinner.stop()
-                print("🗑️ Database deleted")
-                return
-            except:
-                time.sleep(self.delay)
+            if db_path.exists():
+                db_path.unlink()
+                print(f"🗑️ SQLite database deleted: {db_path}")
+            else:
+                print("ℹ️ SQLite database not found")
 
-        spinner.stop()
-        print("❌ Database could not be deleted. Close apps using DB.")
-        raise PermissionError("File locked!")
+        # ------------------------------------------------
+        # POSTGRESQL CLEANUP
+        # ------------------------------------------------
+        elif "postgresql" in engine:
+            db_name = db["NAME"]
+            db_user = db.get("USER", "postgres")
+
+            print("🗑️ Resetting PostgreSQL database...")
+
+            subprocess.run(
+                f'psql -U {db_user} -c "DROP DATABASE IF EXISTS {db_name};"',
+                shell=True,
+                check=False,
+            )
+            subprocess.run(
+                f'psql -U {db_user} -c "CREATE DATABASE {db_name};"',
+                shell=True,
+                check=False,
+            )
+
+            print("✅ PostgreSQL database recreated")
+
+        # ------------------------------------------------
+        # UNSUPPORTED DATABASE
+        # ------------------------------------------------
+        else:
+            raise RuntimeError(f"❌ Unsupported DB engine: {engine}")
 
 
 class PycacheCleaner(Cleaner):
@@ -134,11 +219,28 @@ class PycacheCleaner(Cleaner):
 
 class MigrationsCleaner(Cleaner):
     def clean(self):
-        for m in self.path.rglob("migrations"):
-            for f in list(m.iterdir()):
-                if f.is_file() and f.name != "__init__.py":
-                    f.unlink()
-                    print("🧹 Removed:", f)
+        if not self.exists():
+            print("❌ Apps path does not exist")
+            return
+
+        removed = False
+
+        for migrations_dir in self.path.rglob("migrations"):
+            if not migrations_dir.is_dir():
+                continue
+
+            for file in migrations_dir.iterdir():
+                if (
+                    file.is_file()
+                    and file.name != "__init__.py"
+                    and file.suffix == ".py"
+                ):
+                    file.unlink()
+                    print("🧹 Removed:", file)
+                    removed = True
+
+        if not removed:
+            print("✔️ No migration files to remove")
 
 
 # ======================================================
@@ -243,7 +345,8 @@ if __name__ == "__main__":
         choice = menu()
 
         if choice == "1":
-            DatabaseCleaner(db_file).clean()
+            # DatabaseCleaner(db_file).clean()
+            CrossDatabaseCleaner().clean()
 
         elif choice == "2":
             PycacheCleaner(apps_path).clean()
@@ -259,7 +362,8 @@ if __name__ == "__main__":
 
         elif choice == "6":
             print("⚠️ FULL RESET...")
-            DatabaseCleaner(db_file).clean()
+            # DatabaseCleaner(db_file).clean()
+            CrossDatabaseCleaner().clean()
             PycacheCleaner(apps_path).clean()
             MigrationsCleaner(apps_path).clean()
             # MigrationAndSuperuser().run()
